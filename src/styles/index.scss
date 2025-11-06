@@ -1,14 +1,13 @@
 $cell-size: 100px;
-$gap-size: 1px;
-$month-lengths: 28, 29, 30, 31;
+$border-width: 1px;
 $start-day: (
   mon 0,
-  tue ($cell-size + $gap-size),
-  wed ($cell-size + $gap-size) * 2,
-  thu ($cell-size + $gap-size) * 3,
-  fri ($cell-size + $gap-size) * 4,
-  sat ($cell-size + $gap-size) * 5,
-  sun ($cell-size + $gap-size) * 6
+  tue ($cell-size + $border-width),
+  wed ($cell-size + $border-width) * 2,
+  thu ($cell-size + $border-width) * 3,
+  fri ($cell-size + $border-width) * 4,
+  sat ($cell-size + $border-width) * 5,
+  sun ($cell-size + $border-width) * 6
 );
 
 body {
@@ -29,11 +28,11 @@ body {
 }
 
 .calendar {
-  width: ($cell-size * 7) + ($gap-size * 6);
+  width: ($cell-size * 7) + ($border-width * 6);
   display: flex;
   padding: 10px;
   flex-wrap: wrap;
-  gap: $gap-size;
+  gap: $border-width;
 
   &__day {
     display: block;
@@ -53,7 +52,7 @@ body {
           display: flex;
           justify-content: center;
           align-items: center;
-          height: $cell-size - ($gap-size * 2);
+          height: $cell-size - ($border-width * 2);
         }
       }
     }
